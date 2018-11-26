@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
-import { MonoText } from '../components/StyledText';
+import ProjectSection from '../components/ProjectSection';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -51,6 +51,7 @@ export default class HomeScreen extends React.Component {
           "challenges_won": [],
           "project_id": "5be8531e5e0ea41038a4f16e",
           "project_name": "women emPOWERed",
+          "project_description": "Click through a timeline of women's contributions to STEM and use it as an inspiration to light your own way.",
           "project_url": "https://technica2018.devpost.com/submissions/105731-women-empowered",
           "table_number": "B4"
         },
@@ -118,6 +119,7 @@ export default class HomeScreen extends React.Component {
           ],
           "project_id": "5be8531e5e0ea41038a4f168",
           "project_name": "Recyclicat",
+          "project_description": "Scans pictures of trash items and helps the user classify them as recyclable or non-recyclable.",
           "project_url": "https://technica2018.devpost.com/submissions/105953-recyclicat",
           "table_number": "H1"
         },
@@ -137,6 +139,7 @@ export default class HomeScreen extends React.Component {
           "challenges_won": [],
           "project_id": "5be8531e5e0ea41038a4f173",
           "project_name": "'Crunch'ing the Numbers for College Fitness",
+          "project_description": "A survey-based data analysis about the qualitative and quantitative aspects of college student's fitness routines.",
           "project_url": "https://technica2018.devpost.com/submissions/105782-crunch-ing-the-numbers-for-college-fitness",
           "table_number": "C1"
         },
@@ -156,7 +159,7 @@ export default class HomeScreen extends React.Component {
 
           <View style={styles.projectsContainer}>
             {mockProjectsData.projects.map(project => (
-              <Text key={project.project_id} style={styles.getStartedText}>{project.project_name}</Text>
+              <ProjectSection key={project.project_id} project={project} />
             ))}
           </View>
         </ScrollView>
@@ -188,10 +191,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 50,
   },
-  getStartedText: {
-    fontSize: 17,
-    color: '#FFFFFF',
-    lineHeight: 24,
-    textAlign: 'center',
-  }
 });
