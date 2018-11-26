@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Hackathon Expo App",
+    "description": "React Native app to display project and table assignment info for hackathon expos",
+    "slug": "hackathon-expo-app",
+    "privacy": "public",
+    "sdkVersion": "31.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/technica-splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2f2f2f"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
