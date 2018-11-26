@@ -4,12 +4,15 @@ import { bold } from 'ansi-colors';
 
 export default class ProjectSection extends React.Component {
     render() {
-        const { project: { project_name, project_description, table_number, challenges } } = this.props;
+        const {
+            color: tableNumberBackgroundColor,
+            project: { project_name, project_description, table_number, challenges }
+        } = this.props;
         return (
             <View style={styles.projectContainer}>
                 <View style={styles.innerContainer}>
                     <View style={styles.mainProjectInfoContainer}>
-                        <View style={styles.tableNumberContainer}>
+                        <View style={{ ...styles.tableNumberContainer, backgroundColor: tableNumberBackgroundColor }}>
                             <Text style={styles.tableNumber}>{table_number}</Text>
                         </View>
                         <View style={styles.projectDetailsContainer}>
@@ -56,7 +59,6 @@ const styles = StyleSheet.create({
         maxWidth: 70,
         height: 70,
         borderRadius: 10,
-        backgroundColor: '#FF7BAC',
         marginRight: 15,
     },
     projectDetailsContainer: {

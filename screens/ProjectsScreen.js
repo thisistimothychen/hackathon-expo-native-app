@@ -145,6 +145,8 @@ export default class HomeScreen extends React.Component {
         },
       ],
     };
+    const colors = ["#FF7BAC", "#B6A1C7", "#17E3E3"];
+    let i = 0;
 
     return (
       <View style={styles.container}>
@@ -158,9 +160,11 @@ export default class HomeScreen extends React.Component {
           </View>
 
           <View style={styles.projectsContainer}>
-            {mockProjectsData.projects.map(project => (
-              <ProjectSection key={project.project_id} project={project} />
-            ))}
+            {mockProjectsData.projects.map(project => {
+              color = colors[i%3];
+              i++;
+              return <ProjectSection key={project.project_id} project={project} color={color} />;
+            })}
           </View>
         </ScrollView>
       </View>
